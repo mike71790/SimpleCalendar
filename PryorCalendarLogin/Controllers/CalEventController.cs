@@ -18,18 +18,8 @@ namespace PryorCalendarLogin.Controllers
 
         public ActionResult Index()
         {
-            if (Request.IsAuthenticated)
-            {
-                var cal_event = from c in db.Cal_Event
-                                where c.User.User_Name == User.Identity.Name
-                                select c;
-
-                return View(cal_event.ToList());
-            }
-            else
-            {
-                return Redirect("User/LogIn");
-            }
+            var cal_event = db.Cal_Event.Include(c => c.User);
+            return View(cal_event.ToList());
         }
 
         //

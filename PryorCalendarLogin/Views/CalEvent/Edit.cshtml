@@ -11,14 +11,21 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Cal_Event</legend>
+        <legend>Event</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Event_ID)
+             @Html.DisplayNameFor(model => model.Event_ID)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Event_ID)
-            @Html.ValidationMessageFor(model => model.Event_ID)
+            @Html.DisplayFor(model => model.Event_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Event_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Event_Name)
+            @Html.ValidationMessageFor(model => model.Event_Name)
         </div>
 
         <div class="editor-label">
@@ -27,14 +34,6 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.Date)
             @Html.ValidationMessageFor(model => model.Date)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.User_ID, "User")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("User_ID", String.Empty)
-            @Html.ValidationMessageFor(model => model.User_ID)
         </div>
 
         <div class="editor-label">
@@ -54,11 +53,11 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Event_Name)
+            @Html.LabelFor(model => model.User_ID, "User")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Event_Name)
-            @Html.ValidationMessageFor(model => model.Event_Name)
+            @Html.DropDownList("User_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.User_ID)
         </div>
 
         <p>
